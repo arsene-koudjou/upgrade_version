@@ -3,6 +3,7 @@ package com.example.java2024;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
@@ -19,6 +20,11 @@ public class FeatureFunctions {
            handleList.remove(handleList.get(0));
         }
         return res;
+    }
+
+    public static List<Integer> subListWithOutCondition(List<Integer> ints){
+        Collections.sort(ints,Collections.reverseOrder());
+        return ints.subList(0,ints.size()/2);
     }
 
     public static List<Integer> distinctValues(List<Integer> doubleValues){
@@ -70,6 +76,19 @@ public class FeatureFunctions {
                 Collectors.toList()
         ));
     }
+
+    public static List<String> subListWithCondition(List<String> strings){
+        Predicate<String> condition = s -> s.length()>6;
+       Map<Boolean, List<String>> partitioned = strings.stream().collect(
+                Collectors.partitioningBy(condition)
+        );
+
+        return partitioned.get(true);
+    }
+
+
+
+
 
     public static int[][] buildMatrice(){
         int[][] newMatrice = new int[2][3];

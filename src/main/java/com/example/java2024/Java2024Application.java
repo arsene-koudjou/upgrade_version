@@ -17,24 +17,26 @@ public class Java2024Application {
 		System.out.println("hello application ");
 		List<Integer> res1 = FeatureFunctions.subListMax(exempleValue);
 		List<Integer> res2 = FeatureFunctions.subListMax(exempleDoubleValue);
-		List<String> newList = Arrays.asList("aze","Please","locate","where","up","y", "locate" ,"occurs");
+		List<String> newList = Arrays.asList("aze","Please","locate","where_or","up","y", "location" ,"occurs");
 		System.out.println("good checking: "+FeatureFunctions.checkListContainsStringOrCharValues(newList,"please"));
 		System.out.println("false checking: "+FeatureFunctions.checkListContainsStringOrCharValues(newList,"ZZy"));
 		System.out.println("check grouping by: "+FeatureFunctions.getStringsWithLength(newList));
 		System.out.println("retrieve max after grouping by: "+FeatureFunctions.getStringByMaxLength(newList));
+		System.out.println("sublist with condition: "+ FeatureFunctions.subListWithCondition(newList));
 	/*	System.out.println("with distinct values: "+ res1);
 		System.out.println("without distinct values: "+ res2);
 		System.out.println("flatmapping process: "+ FeatureFunctions.getUniqueTab());
 		int[][] multiDInt = {{1,3},{9,0,5},{15,2,7}};
 		int[] ints2 = multiDInt[2];
-		System.out.println("first tab: "+ Arrays.toString(FeatureFunctions.getFitstTab()));*/
+		System.out.println("first tab: "+ Arrays.toString(FeatureFunctions.getFitstTab()));
 		for (int[] stri: FeatureFunctions.buildMatrice()){
 			System.out.print("row: ");
 			for (int i: stri){
 				System.out.print(i);
 			}
-		}
-
+		} */
+		System.out.println("first sublist result: "+ FeatureFunctions.subListMax(exempleValue));
+		System.out.println("second sublist result: "+ FeatureFunctions.subListWithOutCondition(exempleValue));
 	}
 
 }
